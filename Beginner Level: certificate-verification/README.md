@@ -1,66 +1,166 @@
-# CertiChain — Certificate Verification System
+# Blockchain Development Internship — ShadowFox
 
-A minimal blockchain-inspired certificate verification application. An issuer creates a certificate record and a user verifies it using a unique certificate ID. SHA-256 hashes and previous-hash links demonstrate basic blockchain concepts such as tamper resistance and record verification.
+A collection of blockchain and Web3 projects developed as part of the **ShadowFox Blockchain Developer Internship**. This repository progresses from a beginner-friendly certificate verification system to wallet-connected decentralized applications and smart contract-based crowdfunding.
 
-## Tech Stack
+## Projects
 
-- **Frontend:** React + Vite
-- **Backend:** Node.js + Express
-- **Database:** MongoDB
-- **Blockchain concept:** SHA-256 hashing + linked records
-- **HTTP client:** Axios
+### 1. Beginner — CertiChain
 
-## Project Structure
+**Certificate Verification and Tamper Detection**
 
-```
-certificate-verification/
-├── client/
-│   ├── src/
-│   │   ├── App.jsx
-│   │   ├── index.css
-│   │   └── main.jsx
-│   ├── index.html
-│   ├── package.json
-│   └── vite.config.js
-├── server/
-│   ├── server.js
-│   ├── blockchain.js
-│   ├── package.json
-│   └── .env
+CertiChain is a blockchain-inspired application designed to issue and verify digital certificates using cryptographic hashing.
+
+**Planned features**
+- Web interface for entering certificate details.
+- Unique certificate IDs and record storage.
+- SHA-256 hashing for certificate fingerprints.
+- Certificate verification and tamper detection.
+- Display of verification results.
+- Explanation of how blockchain provides integrity, transparency, and trust.
+
+**Technologies:** React, Vite, Node.js, Express.js, SHA-256.
+
+### 2. Intermediate — MemberGate
+
+**Wallet-Based Token-Gated Access**
+
+MemberGate is a decentralized application that connects a user's Web3 wallet and checks token ownership before granting access to protected content.
+
+**Planned features**
+- MetaMask wallet connection.
+- Wallet address and connection status display.
+- Token ownership verification.
+- Access control for members.
+- Smart contract interaction and transaction feedback where applicable.
+
+**Technologies:** React, Vite, Solidity, Hardhat, ethers.js, MetaMask.
+
+### 3. Advanced — FundChain
+
+**Smart Contract-Based Crowdfunding**
+
+FundChain is a Web3 crowdfunding prototype that allows users to contribute funds to a campaign through blockchain transactions.
+
+**Planned features**
+- Campaign information and fundraising progress.
+- Wallet connection.
+- Smart contract-based contributions.
+- Transaction confirmation and status display.
+- Contribution records and campaign progress.
+- End-to-end testing of the application.
+
+**Technologies:** React, Vite, Solidity, Hardhat, ethers.js, MetaMask.
+
+## Repository Structure
+
+```text
+BlockChain-ShadowFox-Internship/
+├── beginner/
+│   └── certichain/
+│       ├── frontend/
+│       ├── backend/
+│       └── README.md
+├── intermediate/
+│   └── membergate/
+│       ├── frontend/
+│       ├── contracts/
+│       ├── scripts/
+│       ├── test/
+│       ├── hardhat.config.js
+│       ├── package.json
+│       └── README.md
+├── advanced/
+│   └── fundchain/
+│       ├── frontend/
+│       ├── contracts/
+│       ├── scripts/
+│       ├── test/
+│       ├── hardhat.config.js
+│       ├── package.json
+│       └── README.md
+├── docs/
+│   ├── architecture.md
+│   ├── screenshots/
+│   └── video-script.md
+├── .gitignore
 └── README.md
 ```
 
-## Installation
+*Note: This is the planned structure. Some folders and features will be added as development progresses.*
 
-1. **Install Node.js** — install a current Node.js LTS release and confirm with `node -v` and `npm -v`.
-2. **Install MongoDB** — run MongoDB locally, or use MongoDB Atlas. The included URI uses `mongodb://127.0.0.1:27017/certificate_chain`.
-3. **Install backend packages** — open a terminal in the `server` folder and run:
-   ```
-   npm install
-   ```
-4. **Start backend**:
-   ```
-   npm run dev
-   ```
-   The API should run on port 5000.
-5. **Install frontend packages** — open another terminal in the `client` folder and run:
-   ```
-   npm install
-   ```
-6. **Start frontend**:
-   ```
-   npm run dev
-   ```
-   Open the Vite URL, normally http://localhost:5173.
+## Prerequisites
 
-## How to Test
+Install the following tools as needed for each project:
 
-Open the frontend and choose **Issue Certificate**. Enter a student name, course, institution and date. After issuing, copy the generated Certificate ID. Open **Verify Certificate**, enter the ID and verify it. A valid record should display its certificate details and hash. Try an unknown ID to demonstrate the failed verification path.
+- [Node.js and npm](https://nodejs.org/)
+- [Git](https://git-scm.com/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [MetaMask](https://metamask.io/) for wallet-based projects
+- [Hardhat](https://hardhat.org/) for smart contract development
 
-## How the Blockchain Concept Works
+## Getting Started
 
-Each block contains certificate data, its SHA-256 hash, and the hash of the previous block. Changing the data changes the calculated hash, which provides a simple demonstration of tamper detection. This is a simplified blockchain-inspired implementation, not a decentralized production blockchain.
+Clone the repository:
 
-## Important Notes
+```bash
+git clone https://github.com/YOUR-USERNAME/BlockChain-ShadowFox-Internship.git
+cd BlockChain-ShadowFox-Internship
+```
 
-This beginner implementation does not use MetaMask, WalletConnect, Solidity, Ethereum or a real decentralized blockchain. Wallet connection is part of the intermediate level.
+Replace `YOUR-USERNAME` with your GitHub username.
+
+### Run the Beginner Project
+
+```bash
+cd beginner/certichain/frontend
+npm install
+npm run dev
+```
+
+Follow the terminal output to open the local development URL, usually `http://localhost:5173/`.
+
+The backend and blockchain projects will have their own setup instructions in their respective README files as they are implemented.
+
+## Development Roadmap
+
+- [x] Create the GitHub repository and define the project structure.
+- [x] Initialize the CertiChain React frontend.
+- [ ] Implement certificate issuance and verification.
+- [ ] Add SHA-256 fingerprints and backend record storage.
+- [ ] Build the MemberGate wallet connection and token verification.
+- [ ] Develop and test the FundChain crowdfunding contract.
+- [ ] Integrate the smart contracts with their frontends.
+- [ ] Add screenshots, project documentation, and demonstration videos.
+- [ ] Complete end-to-end testing and prepare the internship submission.
+
+## Security Considerations
+
+- Never commit private keys, seed phrases, passwords, or API secrets.
+- Use environment variables for sensitive configuration.
+- Test smart contracts on a local blockchain or test network before considering deployment.
+- Do not store sensitive personal information directly on a public blockchain.
+- Treat certificate hashes as integrity checks, not proof that the original certificate was legitimately issued.
+
+## Learning Objectives
+
+Through these projects, this repository demonstrates the practical application of:
+
+- Cryptographic hashing and data integrity.
+- Record validation and tamper detection.
+- Blockchain fundamentals and decentralized trust.
+- Ethereum wallets and smart contract interaction.
+- Solidity development and testing.
+- Transaction handling and frontend integration.
+- Documentation and end-to-end project development.
+
+## Internship Submission
+
+The repository will contain the source code, project-specific documentation, and supporting screenshots for the internship tasks. Demonstration videos and submission details will be added when the projects are ready.
+
+## Disclaimer
+
+These projects are educational prototypes developed for learning and internship purposes. They are not intended for production use without appropriate security reviews, testing, and deployment safeguards.
+
+---
+
+**Built as part of the ShadowFox Blockchain Developer Internship.**
