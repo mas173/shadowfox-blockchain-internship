@@ -20,11 +20,11 @@ CertiChain is a blockchain-inspired application designed to issue and verify dig
 
 **Technologies:** React, Vite, Node.js, Express.js, SHA-256.
 
-### 2. Intermediate — MemberGate
+### 2. Intermediate — campuspass
 
 **Wallet-Based Token-Gated Access**
 
-MemberGate is a decentralized application that connects a user's Web3 wallet and checks token ownership before granting access to protected content.
+campuspass is a decentralized application that connects a user's Web3 wallet and checks token ownership before granting access to protected content.
 
 **Planned features**
 - MetaMask wallet connection.
